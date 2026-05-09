@@ -1,8 +1,12 @@
+"use client";
+
+import { useScrollReveal, revealStyle } from "@/hooks/use-scroll-reveal";
+
 const EVENTS = [
   {
     time: "15:00",
     title: "Ceremonia",
-    description: "Ślub w Kościele św. Augustyna i św. Jana Chrzciciela w Zwierzyńcu",
+    description: "Ślub w Kościele św. Augustyna i św. Jana Chrzciciela na Zwierzyńcu",
   },
   {
     time: "16:30",
@@ -12,7 +16,7 @@ const EVENTS = [
   {
     time: "17:00",
     title: "Obiad",
-    description: "Uroczysta kolacja weselna",
+    description: "Uroczysta biesiada weselna",
   },
   {
     time: "18:00",
@@ -22,16 +26,25 @@ const EVENTS = [
 ];
 
 export function Schedule() {
+  const { ref, visible } = useScrollReveal(0.15);
+
   return (
     <section id="schedule" className="py-20 md:py-28 bg-wedding-50">
-      <div className="mx-auto max-w-3xl px-6">
-        <h2 className="font-serif text-3xl md:text-4xl font-light text-center text-wedding-900 tracking-wide">
+      <div className="mx-auto max-w-3xl px-6" ref={ref}>
+        <h2
+          className="font-serif text-3xl md:text-4xl font-light text-center text-wedding-900 tracking-wide"
+          style={revealStyle(visible, 0)}
+        >
           Harmonogram dnia
         </h2>
 
         <div className="mt-14 space-y-0">
           {EVENTS.map((event, i) => (
-            <div key={i} className="flex gap-6 md:gap-10">
+            <div
+              key={i}
+              className="flex gap-6 md:gap-10"
+              style={revealStyle(visible, 150 + i * 120)}
+            >
               {/* Time column */}
               <div className="flex flex-col items-center">
                 <span className="font-serif text-lg md:text-xl text-wedding-700 font-light w-16 text-right">
@@ -41,9 +54,9 @@ export function Schedule() {
 
               {/* Line */}
               <div className="flex flex-col items-center">
-                <div className="w-2.5 h-2.5 rounded-full bg-wedding-400 border-2 border-wedding-200 mt-1.5" />
+                <div className="w-2.5 h-2.5 rounded-full bg-silver-400 border-2 border-silver-200 mt-1.5" />
                 {i < EVENTS.length - 1 && (
-                  <div className="w-px flex-1 bg-wedding-300" />
+                  <div className="w-px flex-1 bg-silver-300" />
                 )}
               </div>
 

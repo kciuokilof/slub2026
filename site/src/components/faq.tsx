@@ -1,15 +1,12 @@
 "use client";
 
+import { useScrollReveal, revealStyle } from "@/hooks/use-scroll-reveal";
+
 const FAQ_ITEMS = [
     {
     question: "Kiedy składamy życzenia?",
     answer:
       "Życzenia składamy po ceremonii zaślubin na dziedzińcu kościoła. Po złożeniu życzeń zachęcamy do sprawnego udania się na salę weselną.",
-  },
-  {
-    question: "Czy mogę przyjechać z dziećmi?",
-    answer:
-      "Oczywiście można przyjechać z dziećmi, prosimy o informację. Na terenie ośrodka nie ma odpowiedniej infrastruktury dla najmłodszych  (brak kącika zabaw, przewijaka, animacji itp.)",
   },
   {
     question: "Chcę wyjść na kopiec, co muszę wiedzieć?",
@@ -38,28 +35,34 @@ const FAQ_ITEMS = [
   {
     question: "Co z prezentami?",
     answer:
-      "Wasz udział w naszym dniu jest dla nas najważniejszy. Jeśli jednak chcielibyście nas obdarować, zamiast kwiatów będziemy wdzięczni za: wino, kawę, książki lub karmę dla zwierząt. Prezenty można wręczyć w dowolnym momencie wesela — przy wejściu na salę będzie przygotowane miejsce na upominki. Można je też przekazać naszym rodzicom lub świadkom.",
+      "Nie mamy preferencji :)",
   },
 ];
 
 export function Faq() {
+  const { ref, visible } = useScrollReveal(0.1);
+
   return (
     <section id="faq" className="py-20 md:py-28 bg-wedding-50">
-      <div className="mx-auto max-w-3xl px-6">
-        <h2 className="font-serif text-3xl md:text-4xl font-light text-center text-wedding-900 tracking-wide">
+      <div className="mx-auto max-w-3xl px-6" ref={ref}>
+        <h2
+          className="font-serif text-3xl md:text-4xl font-light text-center text-wedding-900 tracking-wide"
+          style={revealStyle(visible, 0)}
+        >
           Najczęściej zadawane pytania
         </h2>
 
         <div className="mt-14 space-y-4">
-          {FAQ_ITEMS.map((item) => (
+          {FAQ_ITEMS.map((item, i) => (
             <details
               key={item.question}
               className="group rounded-xl bg-white border border-wedding-200 overflow-hidden"
+              style={revealStyle(visible, 100 + i * 80)}
             >
               <summary className="flex items-center justify-between cursor-pointer px-6 py-4 text-sm font-medium text-wedding-800 hover:bg-wedding-50 transition-colors list-none">
                 {item.question}
                 <svg
-                  className="size-4 text-wedding-400 transition-transform group-open:rotate-180 shrink-0 ml-4"
+                  className="size-4 text-silver-400 transition-transform group-open:rotate-180 shrink-0 ml-4"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"

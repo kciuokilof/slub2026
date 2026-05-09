@@ -58,7 +58,7 @@ export function Hero() {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url(/hero.png)" }}
       />
-      <div className="absolute inset-0 bg-black/45" />
+      <div className="absolute inset-0 bg-wedding-900/55" />
 
       <div className="relative z-10 mx-auto max-w-3xl px-6 text-center text-white py-20">
         <p
@@ -69,7 +69,7 @@ export function Hero() {
         </p>
 
         <h1
-          className="mt-6 font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light tracking-wide"
+          className="mt-6 font-script text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-normal"
           style={fade(150)}
         >
           Jagna & Kamil
@@ -106,7 +106,7 @@ export function Hero() {
         <div className="mt-12" style={fade(700)}>
           <a
             href="#rsvp"
-            className="inline-flex items-center justify-center rounded-lg bg-white/15 backdrop-blur-sm border border-white/30 px-8 py-3.5 text-sm font-medium text-white tracking-wider uppercase hover:bg-white/25 transition-all duration-300"
+            className="inline-flex items-center justify-center rounded-lg bg-silver-400/20 backdrop-blur-sm border border-silver-300/40 px-8 py-3.5 text-sm font-medium text-white tracking-wider uppercase hover:bg-silver-400/30 transition-all duration-300"
           >
             Potwierdź przybycie
           </a>

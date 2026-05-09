@@ -1,17 +1,28 @@
+"use client";
+
 import { Hotel, Bus } from "lucide-react";
+import { useScrollReveal, revealStyle } from "@/hooks/use-scroll-reveal";
 
 export function Accommodation() {
+  const { ref, visible } = useScrollReveal(0.15);
+
   return (
     <section id="accommodation" className="py-20 md:py-28 bg-wedding-50">
-      <div className="mx-auto max-w-4xl px-6">
-        <h2 className="font-serif text-3xl md:text-4xl font-light text-center text-wedding-900 tracking-wide">
+      <div className="mx-auto max-w-4xl px-6" ref={ref}>
+        <h2
+          className="font-serif text-3xl md:text-4xl font-light text-center text-wedding-900 tracking-wide"
+          style={revealStyle(visible, 0)}
+        >
           Noclegi & Transport
         </h2>
 
         <div className="mt-14 grid md:grid-cols-2 gap-8">
           {/* Accommodation */}
-          <div className="text-center space-y-4 p-8 rounded-xl bg-white border border-wedding-200">
-            <Hotel className="mx-auto size-8 text-wedding-500 stroke-[1.2]" />
+          <div
+            className="text-center space-y-4 p-8 rounded-xl bg-white border border-wedding-200"
+            style={revealStyle(visible, 150, { scale: true })}
+          >
+            <Hotel className="mx-auto size-8 text-silver-500 stroke-[1.2]" />
             <h3 className="font-serif text-xl font-light text-wedding-800">
               Noclegi
             </h3>
@@ -28,8 +39,11 @@ export function Accommodation() {
           </div>
 
           {/* Transport */}
-          <div className="text-center space-y-4 p-8 rounded-xl bg-white border border-wedding-200">
-            <Bus className="mx-auto size-8 text-wedding-500 stroke-[1.2]" />
+          <div
+            className="text-center space-y-4 p-8 rounded-xl bg-white border border-wedding-200"
+            style={revealStyle(visible, 300, { scale: true })}
+          >
+            <Bus className="mx-auto size-8 text-silver-500 stroke-[1.2]" />
             <h3 className="font-serif text-xl font-light text-wedding-800">
               Transport
             </h3>

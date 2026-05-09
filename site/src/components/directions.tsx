@@ -1,7 +1,13 @@
+"use client";
+
 import { TriangleAlert } from "lucide-react";
 import Image from "next/image";
+import { useScrollReveal, revealStyle } from "@/hooks/use-scroll-reveal";
 
 export function Directions() {
+  const { ref: churchRef, visible: churchVisible } = useScrollReveal(0.1);
+  const { ref: venueRef, visible: venueVisible } = useScrollReveal(0.1);
+
   return (
     <section id="maps" className="py-20 md:py-28">
       <div className="mx-auto max-w-5xl px-6">
@@ -10,17 +16,26 @@ export function Directions() {
         </h2>
 
         {/* Church */}
-        <div className="mt-16 space-y-6">
-          <h3 className="font-serif text-2xl font-light text-wedding-800">
+        <div className="mt-16 space-y-6" ref={churchRef}>
+          <h3
+            className="font-serif text-2xl font-light text-wedding-800"
+            style={revealStyle(churchVisible, 0)}
+          >
             Kościół — Ceremonia
           </h3>
-          <p className="text-sm text-muted-foreground">
-            Kościół św. Augustyna i św. Jana Chrzciciela w Zwierzyńcu
+          <p
+            className="text-sm text-muted-foreground"
+            style={revealStyle(churchVisible, 100)}
+          >
+            Kościół św. Augustyna i św. Jana Chrzciciela na Zwierzyńcu
             <br />
-            ul. Tadeusza Kościuszki, 30-114 Kraków
+            ul. Tadeusza Kościuszki 88, 30-114 Kraków
           </p>
 
-          <div className="text-sm text-wedding-700 leading-relaxed space-y-3">
+          <div
+            className="text-sm text-wedding-700 leading-relaxed space-y-3"
+            style={revealStyle(churchVisible, 200)}
+          >
             <p>
               Kościół znajduje się na Zwierzyńcu, tuż przy moście Dębnickim, nad
               samą Wisłą. Jadąc od strony centrum — kierujcie się aleją
@@ -36,7 +51,10 @@ export function Directions() {
             </p>
           </div>
 
-          <div className="rounded-xl overflow-hidden border border-wedding-200">
+          <div
+            className="rounded-xl overflow-hidden border border-wedding-200"
+            style={revealStyle(churchVisible, 300, { scale: true })}
+          >
             <Image
               src="/mapa-kosciol.png"
               alt="Mapa dojazdu do kościoła"
@@ -46,9 +64,12 @@ export function Directions() {
             />
           </div>
 
-          <div className="rounded-xl overflow-hidden border border-wedding-200">
+          <div
+            className="rounded-xl overflow-hidden border border-wedding-200"
+            style={revealStyle(churchVisible, 400, { scale: true })}
+          >
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2561.5!2d19.9085!3d50.0555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47164467e5b2e477%3A0x6d7b7e8e3b8c8b8b!2sKo%C5%9Bci%C3%B3%C5%82%20%C5%9Bw.%20Augustyna%20i%20%C5%9Bw.%20Jana%20Chrzciciela!5e0!3m2!1spl!2spl!4v1700000000000!5m2!1spl!2spl"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1280.5!2d19.9141919!3d50.0521627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47165b762a8a3e99%3A0xd6e453b9ea19d47f!2sParish%20of%20the%20Holy%20Saviour!5e0!3m2!1spl!2spl!4v1700000000000!5m2!1spl!2spl"
               width="100%"
               height="350"
               style={{ border: 0 }}
@@ -64,17 +85,26 @@ export function Directions() {
         <div className="my-16 border-t border-wedding-200" />
 
         {/* Venue */}
-        <div className="space-y-6">
-          <h3 className="font-serif text-2xl font-light text-wedding-800">
+        <div className="space-y-6" ref={venueRef}>
+          <h3
+            className="font-serif text-2xl font-light text-wedding-800"
+            style={revealStyle(venueVisible, 0)}
+          >
             Sala weselna — Wesele
           </h3>
-          <p className="text-sm text-muted-foreground">
+          <p
+            className="text-sm text-muted-foreground"
+            style={revealStyle(venueVisible, 100)}
+          >
             Sala weselna przy Kopcu Kościuszki
             <br />
             al. Jerzego Waszyngtona 1, 30-204 Kraków
           </p>
 
-          <div className="text-sm text-wedding-700 leading-relaxed space-y-3">
+          <div
+            className="text-sm text-wedding-700 leading-relaxed space-y-3"
+            style={revealStyle(venueVisible, 200)}
+          >
             <p>
               Sala weselna mieści się u podnóża Kopca Kościuszki. Jadąc od strony
               centrum Krakowa, kierujcie się aleją Waszyngtona (od strony
@@ -108,7 +138,10 @@ export function Directions() {
             </p>
           </div>
 
-          <div className="rounded-xl overflow-hidden border border-wedding-200">
+          <div
+            className="rounded-xl overflow-hidden border border-wedding-200"
+            style={revealStyle(venueVisible, 300, { scale: true })}
+          >
             <Image
               src="/mapa-kopiec.png"
               alt="Mapa dojazdu do sali weselnej"
@@ -118,7 +151,10 @@ export function Directions() {
             />
           </div>
 
-          <div className="rounded-xl overflow-hidden border border-wedding-200">
+          <div
+            className="rounded-xl overflow-hidden border border-wedding-200"
+            style={revealStyle(venueVisible, 400, { scale: true })}
+          >
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2561.5!2d19.8932!3d50.0545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47164453b3da57f3%3A0x471e09c888fb2f5e!2sKopiec%20Ko%C5%9Bciuszki!5e0!3m2!1spl!2spl!4v1700000000001!5m2!1spl!2spl"
               width="100%"
