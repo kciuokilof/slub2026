@@ -6,7 +6,7 @@ const FAQ_ITEMS = [
     {
     question: "Kiedy składamy życzenia?",
     answer:
-      "Życzenia składamy po ceremonii zaślubin na dziedzińcu kościoła. Po złożeniu życzeń zachęcamy do sprawnego udania się na salę weselną.",
+      "Życzenia składamy po ceremonii zaślubin na dziedzińcu Kościoła. Po złożeniu życzeń zachęcamy do sprawnego transportu na salę weselną.",
   },
   {
     question: "Chcę wyjść na kopiec, co muszę wiedzieć?",
@@ -26,17 +26,7 @@ const FAQ_ITEMS = [
   {
     question: "Do której trwa wesele?",
     answer: "Będziemy bawić się do białego rana! Planujemy zakończenie zabawy w okolicach godziny 4:00–5:00.",
-  },
-  {
-    question: "Czy można robić zdjęcia w kościele?",
-    answer:
-      "Podczas ceremonii prosimy o niefotografowanie — chcemy, żebyście byli z nami w pełni obecni. Profesjonalny fotograf zadba o uwiecznienie tego momentu. Po ceremonii będzie mnóstwo czasu na wspólne zdjęcia!",
-  },
-  {
-    question: "Co z prezentami?",
-    answer:
-      "Nie mamy preferencji :)",
-  },
+  }
 ];
 
 export function Faq() {

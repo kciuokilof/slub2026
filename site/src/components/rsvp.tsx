@@ -16,19 +16,24 @@ export function Rsvp() {
         </h2>
 
         <p
-          className="mt-6 text-xl md:text-2xl font-bold text-wedding-800 leading-relaxed"
+          className="mt-6 text-3xl md:text-4xl font-bold text-wedding-800 leading-relaxed"
           style={revealStyle(visible, 100)}
         >
           Zapraszamy na nasz ślub!
         </p>
 
         <p
-          className="mt-3 text-sm text-muted-foreground leading-relaxed"
+          className="mt-3 text-m text-muted-foreground leading-relaxed"
           style={revealStyle(visible, 150)}
         >
           Prosimy o potwierdzenie obecności do{" "}
-          <strong className="text-wedding-800">24 sierpnia 2026</strong>{" "}
-          (2 miesiące przed wydarzeniem).
+          <strong className="text-wedding-800">24 sierpnia 2026.</strong>{" "}
+        </p>
+        <p
+          className="mt-3 text-xs text-muted-foreground leading-relaxed"
+          style={revealStyle(visible, 170)}
+        >
+          (2 miesiące przed wydarzeniem)
         </p>
 
         <div
@@ -61,7 +66,7 @@ export function Rsvp() {
             </li>
             <li className="flex gap-2">
               <span className="text-silver-400">—</span>
-              Dedykacja muzyczna
+              Dedykacja muzyczna dla chętnych
             </li>
           </ul>
         </div>

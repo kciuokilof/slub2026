@@ -86,7 +86,7 @@ export function Hero() {
           className="mt-6 text-base md:text-lg font-light text-white/75 max-w-lg mx-auto leading-relaxed"
           style={fade(400)}
         >
-          Nie możemy się doczekać, aż będziemy świętować ten dzień razem z Wami.
+          Nie możemy się doczekać, aż będziemy świętować ten dzień razem z Wami
         </p>
 
         {/* Countdown */}
