@@ -4,14 +4,14 @@ import { Phone } from "lucide-react";
 import { useScrollReveal, revealStyle } from "@/hooks/use-scroll-reveal";
 
 const CONTACTS = [
-  { role: "Świadkowa", name: "Anna Kowalska", phone: "+48 512 345 678" },
-  { role: "Świadek", name: "Ludwik Bukowski", phone: "+48 601 987 588" },
-  { role: "Mama Panny Młodej", name: "Barbara Golemo", phone: "+48 604 428 057" },
-  { role: "Tata Panny Młodej", name: "Paweł Golemo", phone: "+48 545 678 901" },
-  { role: "Mama Pana Młodego", name: "Justyna Kozioł", phone: "+48 500 303 603" },
-  { role: "Tata Pana Młodego", name: "Krystian Kozioł", phone: "+48 501 615 787" },
   { role: "Pani Młoda", name: "Jagna Golemo", phone: "+48 784 940 324" },
   { role: "Pan Młody", name: "Kamil Kozioł", phone: "+48 500 227 184" },
+  { role: "Mama Panny Młodej", name: "Barbara Golemo", phone: "+48 604 428 057" },
+  { role: "Mama Pana Młodego", name: "Justyna Kozioł", phone: "+48 500 303 603" },
+  { role: "Tata Panny Młodej", name: "Paweł Golemo", phone: "+48 545 678 901" },
+  { role: "Tata Pana Młodego", name: "Krystian Kozioł", phone: "+48 501 615 787" },
+  { role: "Świadkowa", name: "Kamila Golemo", phone: "+48 512 345 678" },
+  { role: "Świadek", name: "Ludwik Bukowski", phone: "+48 601 987 588" },
   { role: "Brat Pana Młodego", name: "Kacper Kozioł", phone: "+48 500 537 516" },
 ];
 
