@@ -14,14 +14,6 @@ export function Rsvp() {
         >
           Potwierdź przybycie
         </h2>
-
-        <p
-          className="mt-6 text-3xl md:text-4xl font-bold text-wedding-800 leading-relaxed"
-          style={revealStyle(visible, 100)}
-        >
-          Zapraszamy na nasz ślub!
-        </p>
-
         <p
           className="mt-3 text-m text-muted-foreground leading-relaxed"
           style={revealStyle(visible, 150)}
@@ -46,11 +38,11 @@ export function Rsvp() {
           <ul className="space-y-2 text-sm text-muted-foreground">
             <li className="flex gap-2">
               <span className="text-silver-400">—</span>
-              Imię i nazwisko
+              Ilość osób, których przybycie chcesz potwierdzić
             </li>
             <li className="flex gap-2">
               <span className="text-silver-400">—</span>
-              Czy zabierasz osobę towarzyszącą (+1)?
+              Imiona i nazwiska
             </li>
             <li className="flex gap-2">
               <span className="text-silver-400">—</span>
@@ -62,25 +54,20 @@ export function Rsvp() {
             </li>
             <li className="flex gap-2">
               <span className="text-silver-400">—</span>
-              Czy potrzebujesz transportu? (Tarnów → Kraków / bus powrotny)
-            </li>
-            <li className="flex gap-2">
-              <span className="text-silver-400">—</span>
-              Dedykacja muzyczna dla chętnych
+              Czy potrzebujesz transportu? (Dąbrowa Tarnowska → Tarnów → Kraków / bus powrotny)
             </li>
           </ul>
         </div>
 
         <div className="mt-10" style={revealStyle(visible, 350)}>
           <a
-            href="#"
+            href="https://docs.google.com/forms/d/e/1FAIpQLScmCaaKXRrgzD1_QU7SJTUOnNQd4LPDifbA8YBzAl0ptKvlsw/viewform"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center rounded-lg bg-wedding-700 px-12 py-5 text-lg font-semibold text-white tracking-wider uppercase hover:bg-wedding-800 hover:scale-105 transition-all duration-300"
           >
             Wypełnij formularz RSVP
           </a>
-          <p className="mt-4 text-xs text-muted-foreground">
-            Formularz Google Forms — link zostanie uzupełniony wkrótce.
-          </p>
           <p className="mt-3 text-xs text-muted-foreground">
             Znasz kogoś, kto nie korzysta z internetu? Przekaż mu te informacje lub pomóż wypełnić formularz.
           </p>

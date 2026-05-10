@@ -62,7 +62,7 @@ export function Hero() {
 
       <div className="relative z-10 mx-auto max-w-3xl px-6 text-center text-white py-20">
         <p
-          className="text-sm md:text-base font-light tracking-[0.3em] uppercase text-white/80"
+          className="text-sm md:text-3xl font-semibold tracking-[0.3em] uppercase text-white/80"
           style={fade(0)}
         >
           Zapraszamy na nasz ślub

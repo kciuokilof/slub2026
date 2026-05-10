@@ -144,8 +144,8 @@ Accordion/collapsible list:
 
 - Deadline text: "Prosimy o potwierdzenie obecności do **24 września 2026**."
 - Description of what the form asks (so guests can think before clicking):
-  - Imię i nazwisko
   - Czy zabierasz osobę towarzyszącą (+1)?
+  - Imię i nazwisko
   - Preferencje żywieniowe (wegetariańskie, alergie, nietolerancje)
   - Czy potrzebujesz noclegu? (od piątku / od soboty)
   - Czy potrzebujesz transportu? (Tarnów → Kraków / bus powrotny)

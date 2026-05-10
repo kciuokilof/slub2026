@@ -1,6 +1,13 @@
 /**
+ * UWAGA!!! Niesttety trzeba recznie poparawiac sekcje, jakos skrypt sie gubi. Naprawic - czyli zmienic recznie gdzie po ktorej sekcji isc do nastepnej sekcji albo konczyc form
+ *
+ * 22:24:26	Info	Link do edycji: https://docs.google.com/forms/d/1BL58YAS21ejfryhxPgtkFuY3UwtnvgwqB8w5NOVyYnU/edit
+ * 22:24:26	Info	Link do wypełniania: https://docs.google.com/forms/d/e/1FAIpQLScmCaaKXRrgzD1_QU7SJTUOnNQd4LPDifbA8YBzAl0ptKvlsw/viewform
  * RSVP Form Generator — Jagna & Kamil, 24.10.2026
  *
+ * Dynamiczny formularz obsługujący 1–4 osoby.
+ * Pierwsze pytanie "Ilu gości potwierdzasz?" kieruje do odpowiedniego
+ * łańcucha stron (page breaks z nawigacją warunkową).
  * Jak użyć:
  * 1. Wejdź na https://script.google.com
  * 2. Utwórz nowy projekt
@@ -16,7 +23,7 @@ function createRsvpForm() {
     "Prosimy o potwierdzenie obecności na naszym ślubie i weselu.\n" +
       "Termin: 24 października 2026\n" +
       "Prosimy o wypełnienie formularza do 24 września 2026.\n\n" +
-      "Jeśli przychodzicie w parze — wystarczy jeden formularz za was oboje."
+      "Pomyłka w formularzu? Nic nie szkodzi! Po prostu wyślij formularz jeszcze raz z poprawnymi danymi — uwzględnimy tylko najnowszą odpowiedź."
   );
 
   form.setConfirmationMessage(
@@ -27,137 +34,147 @@ function createRsvpForm() {
   form.setLimitOneResponsePerUser(false);
   form.setProgressBar(false);
 
-  // ── Strona 1: Ile osób? ──────────────────────────────────────────────
+  // ── Strategia (BEZ moveItem!) ─────────────────────────────────────────
+  // 1. Dodaj pytanie "Ilu gości?" BEZ nawigacji (na razie)
+  // 2. Buduj wszystkie łańcuchy SEKWENCYJNIE
+  //    (addPageBreakItem + pytania lądują na końcu w dobrej kolejności)
+  // 3. Na końcu: re-fetch itemy, ustaw nawigację na "Ilu gości?" i PBs
+
+  // ── 1. Pytanie wstępne (nawigację ustawimy na końcu) ─────────────────
 
   var howMany = form
     .addMultipleChoiceItem()
-    .setTitle("Ile osób zgłaszasz?")
-    .setHelpText("Jeśli przychodzisz z osobą towarzyszącą, wybierz 2.")
+    .setTitle("Ilu gości łącznie z Tobą potwierdzasz?")
     .setRequired(true);
 
-  // Tworzymy strony (sekcje) z góry, żeby móc linkować nawigację
-  var pageGuest1 = form.addPageBreakItem().setTitle("Twoje dane");
+  var howManyId = howMany.getId();
 
-  var pageGuest2 = form.addPageBreakItem().setTitle("Osoba towarzysząca");
+  // Tymczasowo ustawiamy choices bez nawigacji
+  howMany.setChoiceValues(["Jednego gościa", "Dwoje gości", "Troje gości", "Czworo gości"]);
 
-  var pageCommon = form.addPageBreakItem().setTitle("Pytania dodatkowe");
+  // ── 2. Buduj łańcuchy SEKWENCYJNIE ───────────────────────────────────
+  // Każdy element dodawany przez addXxxItem() ląduje na końcu formularza.
+  // Dzięki temu page breaks i pytania są w naturalnej kolejności.
 
-  // Ustawiamy nawigację warunkową
-  howMany.setChoices([
-    howMany.createChoice("1 osoba", pageGuest1),
-    howMany.createChoice("2 osoby", pageGuest1),
+  var chains = [1, 2, 3, 4];
+  var firstPageIds = {};   // firstPageIds[chainLen] = id pierwszego PB w łańcuchu
+  var allPageIds = {};     // allPageIds[chainLen] = [id_os1, id_os2, ...]
+
+  for (var c = 0; c < chains.length; c++) {
+    var chainLen = chains[c];
+    allPageIds[chainLen] = [];
+
+    // Strony z pytaniami o gości
+    for (var personIdx = 1; personIdx <= chainLen; personIdx++) {
+      var pb = form.addPageBreakItem().setTitle("Gość nr. " + personIdx + "/" + chainLen);
+      var pbId = pb.getId();
+      allPageIds[chainLen].push(pbId);
+      if (personIdx === 1) {
+        firstPageIds[chainLen] = pbId;
+      }
+      addPersonQuestions(form, " (Gość nr. " + personIdx + ")");
+    }
+  }
+
+  // ── 3. Ustawienie nawigacji ───────────────────────────────────────────
+  // Re-fetch wszystkie itemy i zbuduj mapę ID → item
+
+  var pbMap = {};
+  var howManyItem = null;
+  var allItems = form.getItems();
+
+  for (var i = 0; i < allItems.length; i++) {
+    var item = allItems[i];
+    if (item.getType() === FormApp.ItemType.PAGE_BREAK) {
+      pbMap[item.getId()] = item.asPageBreakItem();
+    }
+    if (item.getId() === howManyId) {
+      howManyItem = item.asMultipleChoiceItem();
+    }
+  }
+
+  // 3a. Nawigacja z pytania "Ilu gości?"
+  howManyItem.setChoices([
+    howManyItem.createChoice("Jednego gościa", pbMap[firstPageIds[1]]),
+    howManyItem.createChoice("Dwoje gości", pbMap[firstPageIds[2]]),
+    howManyItem.createChoice("Troje gości", pbMap[firstPageIds[3]]),
+    howManyItem.createChoice("Czworo gości", pbMap[firstPageIds[4]]),
   ]);
 
-  // ── Strona 2: Osoba 1 ────────────────────────────────────────────────
+  // 3b. Nawigacja między stronami w łańcuchach
+  for (var c = 0; c < chains.length; c++) {
+    var chainLen = chains[c];
+    for (var i = 0; i < chainLen; i++) {
+      var currentPb = pbMap[allPageIds[chainLen][i]];
+      if (i < chainLen - 1) {
+        currentPb.setGoToPage(pbMap[allPageIds[chainLen][i + 1]]);
+      } else {
+        // Ostatnia osoba → SUBMIT
+        currentPb.setGoToPage(FormApp.PageNavigationType.SUBMIT);
+      }
+    }
+  }
 
-  form
-    .addTextItem()
-    .setTitle("Imię i nazwisko")
-    .setRequired(true);
-
-  form
-    .addMultipleChoiceItem()
-    .setTitle("Czy potwierdzasz obecność?")
-    .setChoiceValues(["Tak, będę!", "Niestety nie dam rady"])
-    .setRequired(true);
-
-  form
-    .addTextItem()
-    .setTitle("Preferencje żywieniowe / alergie")
-    .setHelpText("Np. wegetarianka, bezglutenowo, alergia na orzechy… Zostaw puste jeśli nie dotyczy.");
-
-  form
-    .addMultipleChoiceItem()
-    .setTitle("Czy potrzebujesz noclegu?")
-    .setChoiceValues(["Nie", "Tak, od piątku (23.10)", "Tak, od soboty (24.10)"])
-    .setRequired(true);
-
-  form
-    .addMultipleChoiceItem()
-    .setTitle("Transport Tarnów → miejsce ślubu?")
-    .setHelpText("Organizujemy bus z Tarnowa do Krakowa.")
-    .setChoiceValues(["Nie, dojadę samodzielnie", "Tak, poproszę"])
-    .setRequired(true);
-
-  form
-    .addMultipleChoiceItem()
-    .setTitle("Bus powrotny po weselu?")
-    .setHelpText("Bus z miejsca wesela z powrotem do Tarnowa.")
-    .setChoiceValues(["Nie", "Tak, poproszę"])
-    .setRequired(true);
-
-  // Nawigacja: po stronie osoby 1, sprawdzamy ile osób
-  // Niestety Google Forms nie pozwala na warunkową nawigację z page break,
-  // więc używamy triku: nawigacja z pytania "Ile osób?" kieruje obie opcje
-  // na stronę 1, a na końcu strony 1 ustawiamy przejście do strony 2.
-  // Musimy użyć pytania warunkowego na stronie 1.
-
-  var goToGuest2 = form
-    .addMultipleChoiceItem()
-    .setTitle("Czy wypełniasz też za osobę towarzyszącą?")
-    .setHelpText("Jeśli na początku wybrałeś/aś '2 osoby', wybierz 'Tak'.")
-    .setRequired(true);
-
-  goToGuest2.setChoices([
-    goToGuest2.createChoice("Tak", pageGuest2),
-    goToGuest2.createChoice("Nie, tylko za siebie", pageCommon),
-  ]);
-
-  // ── Strona 3: Osoba 2 ────────────────────────────────────────────────
-
-  form
-    .addTextItem()
-    .setTitle("Imię i nazwisko (osoba towarzysząca)")
-    .setRequired(false);
-
-  form
-    .addMultipleChoiceItem()
-    .setTitle("Czy ta osoba potwierdza obecność?")
-    .setChoiceValues(["Tak, będzie!", "Niestety nie da rady"])
-    .setRequired(false);
-
-  form
-    .addTextItem()
-    .setTitle("Preferencje żywieniowe / alergie (osoba towarzysząca)")
-    .setHelpText("Zostaw puste jeśli nie dotyczy.");
-
-  form
-    .addMultipleChoiceItem()
-    .setTitle("Czy ta osoba potrzebuje noclegu?")
-    .setChoiceValues(["Nie", "Tak, od piątku (23.10)", "Tak, od soboty (24.10)"])
-    .setRequired(false);
-
-  form
-    .addMultipleChoiceItem()
-    .setTitle("Transport Tarnów → miejsce ślubu? (osoba towarzysząca)")
-    .setChoiceValues(["Nie, dojedzie samodzielnie", "Tak, poproszę"])
-    .setRequired(false);
-
-  form
-    .addMultipleChoiceItem()
-    .setTitle("Bus powrotny po weselu? (osoba towarzysząca)")
-    .setChoiceValues(["Nie", "Tak, poproszę"])
-    .setRequired(false);
-
-  // Po stronie 3 → idź do strony wspólnej
-  pageGuest2.setGoToPage(pageCommon);
-
-  // ── Strona 4: Pytania wspólne ─────────────────────────────────────────
-
-  form
-    .addTextItem()
-    .setTitle("Dedykacja muzyczna")
-    .setHelpText("Jaki utwór musi zagrać na weselu? 🎵");
-
-  form
-    .addParagraphTextItem()
-    .setTitle("Coś jeszcze?")
-    .setHelpText("Dodatkowe uwagi, pytania, życzenia…");
-
-  // ── Logowanie ─────────────────────────────────────────────────────────
+  // ── Logowanie ──────────────────────────────────────────────────────────
 
   Logger.log("Formularz utworzony!");
   Logger.log("Link do edycji: " + form.getEditUrl());
   Logger.log("Link do wypełniania: " + form.getPublishedUrl());
-  Logger.log("Link do odpowiedzi (Sheets): utwórz arkusz z poziomu formularza");
+}
+
+/**
+ * Dodaje 8 pytań o jedną osobę (z sufiksem do identyfikacji).
+ */
+function addPersonQuestions(form, suffix) {
+  form
+    .addTextItem()
+    .setTitle("Imię" + suffix)
+    .setRequired(true);
+
+  form
+    .addTextItem()
+    .setTitle("Nazwisko" + suffix)
+    .setRequired(true);
+
+  form
+    .addMultipleChoiceItem()
+    .setTitle("Czy potwierdzasz obecność?" + suffix)
+    .setChoiceValues(["Tak", "Nie"])
+    .setRequired(true);
+
+  form
+    .addMultipleChoiceItem()
+    .setTitle("Opcja wegetariańska?" + suffix)
+    .setChoiceValues(["Nie", "Tak"])
+    .setRequired(true);
+
+  form
+    .addTextItem()
+    .setTitle("Inna dieta / alergie?" + suffix)
+    .setHelpText("Np. bezglutenowo, alergia na orzechy… Zostaw puste jeśli nie dotyczy.");
+
+  form
+    .addMultipleChoiceItem()
+    .setTitle("Czy potrzebujesz noclegu?" + suffix)
+    .setChoiceValues(["Nie", "Tak, od piątku (23.10)", "Tak, od soboty (24.10)"])
+    .setRequired(true);
+
+  form
+    .addMultipleChoiceItem()
+    .setTitle("Transport z Dąbrowy Tarnowskiej lub Tarnowa?" + suffix)
+    .setHelpText("Organizujemy bus z Dąbrowy Tarnowskiej i Tarnowa.")
+    .setChoiceValues(["Nie, dojadę samodzielnie", "Tak, z Dąbrowy Tarnowskiej", "Tak, z Tarnowa"])
+    .setRequired(true);
+
+  form
+    .addMultipleChoiceItem()
+    .setTitle("Bus powrotny po weselu?" + suffix)
+    .setHelpText("Bus z miejsca wesela z powrotem do Tarnowa i Dąbrowy Tarnowskiej.")
+    .setChoiceValues(["Nie", "Tak"])
+    .setRequired(true);
+
+  form
+    .addParagraphTextItem()
+    .setTitle("Coś jeszcze?" + suffix)
+    .setHelpText("Uwagi, pytania, życzenia… a może dedykacja muzyczna? 🎵");
 }

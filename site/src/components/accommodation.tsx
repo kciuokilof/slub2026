@@ -49,8 +49,10 @@ export function Accommodation() {
             </h3>
             <p className="text-2xl">Wkrótce</p>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Planujemy zorganizować transport autobusowy na trasie{" "}
-              <strong>Tarnów → Kraków</strong> (przed ślubem) oraz{" "}
+              Planujemy zorganizować transport autobusowy na trasie:{" "}
+            </p>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              <strong>Dąbrowa Tarnowska → Tarnów → Kraków</strong> (przed ślubem) oraz{" "}
               <strong>busy powrotne</strong> po weselu.
             </p>
             <p className="text-sm text-wedding-600">
