@@ -1,6 +1,6 @@
 "use client";
 
-import { TriangleAlert } from "lucide-react";
+import { Bus, TriangleAlert } from "lucide-react";
 import Image from "next/image";
 import { useScrollReveal, revealStyle } from "@/hooks/use-scroll-reveal";
 
@@ -15,101 +15,25 @@ export function Directions() {
           Jak dojechać
         </h2>
 
-        {/* Church */}
-        <div className="mt-16 space-y-6" ref={churchRef}>
-          <h3
-            className="font-serif text-2xl font-light text-wedding-800"
-            style={revealStyle(churchVisible, 0)}
-          >
-            Kościół — Ceremonia
-          </h3>
-          <p
-            className="text-sm text-muted-foreground"
-            style={revealStyle(churchVisible, 100)}
-          >
-            Kościół św. Augustyna i św. Jana Chrzciciela na Zwierzyńcu
-            <br />
-            ul. Tadeusza Kościuszki 88, 30-114 Kraków
-          </p>
-
-          <div
-            className="text-sm text-wedding-700 leading-relaxed space-y-3"
-            style={revealStyle(churchVisible, 200)}
-          >
-            <p>
-              Kościół znajduje się na Zwierzyńcu, tuż przy moście Dębnickim, nad
-              samą Wisłą. Jadąc od strony centrum — kierujcie się aleją
-              Krasińskiego w stronę Salwatora. Po minięciu ronda przy Poczcie
-              Głównej skręćcie w ulicę Kościuszki. Kościół znajduje się po prawej
-              stronie, tuż za Klasztorem Sióstr Norbertanek.
-            </p>
-            <p>
-              <strong>Parking:</strong> Parking dostępny jest wzdłuż ulicy
-              Kościuszki (miejsca równoległe) oraz na małym parkingu przy
-              klasztorze. Można też zaparkować na ulicy św. Bronisławy lub przy
-              Salwatorze.
-            </p>
-          </div>
-
-          <div
-            className="rounded-xl overflow-hidden border border-wedding-200"
-            style={revealStyle(churchVisible, 300, { scale: true })}
-          >
-            <Image
-              src="/mapa-kosciol.png"
-              alt="Mapa dojazdu do kościoła"
-              width={1200}
-              height={600}
-              className="w-full h-auto"
-            />
-          </div>
-
-          <div
-            className="rounded-xl overflow-hidden border border-wedding-200"
-            style={revealStyle(churchVisible, 400, { scale: true })}
-          >
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1280.5!2d19.9141919!3d50.0521627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47165b762a8a3e99%3A0xd6e453b9ea19d47f!2sParish%20of%20the%20Holy%20Saviour!5e0!3m2!1spl!2spl!4v1700000000000!5m2!1spl!2spl"
-              width="100%"
-              height="350"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Mapa kościoła"
-            />
-          </div>
-        </div>
-
-        {/* Divider */}
-        <div className="my-16 border-t border-wedding-200" />
-
         {/* Venue */}
-        <div className="space-y-6" ref={venueRef}>
+        <div className="mt-16 space-y-6" ref={venueRef}>
           <h3
             className="font-serif text-2xl font-light text-wedding-800"
             style={revealStyle(venueVisible, 0)}
           >
-            Sala weselna — Wesele
+            Sala weselna — tu parkujemy
           </h3>
-          <p
-            className="text-sm text-muted-foreground"
-            style={revealStyle(venueVisible, 100)}
-          >
-            Sala weselna przy Kopcu Kościuszki
-            <br />
-            al. Jerzego Waszyngtona 1, 30-204 Kraków
-          </p>
+
 
           <div
             className="text-sm text-wedding-700 leading-relaxed space-y-3"
             style={revealStyle(venueVisible, 200)}
           >
             <p>
-              Sala weselna mieści się u podnóża Kopca Kościuszki. Jadąc od strony
-              centrum Krakowa, kierujcie się aleją Waszyngtona (od strony
-              Salwatora / Zwierzyńca). Aleja prowadzi serpentynami pod górę w
-              kierunku kopca.
+              Sala weselna mieści się u podnóża Kopca Kościuszki, gdzie znajduje
+              się wygodny parking dla gości. To właśnie tutaj zostawiamy
+              samochody — zarówno na czas ceremonii, jak i wesela. Dojazd i
+              miejsce parkingowe pokazuje poniższa mapa.
             </p>
 
             {/* Warning */}
@@ -130,12 +54,21 @@ export function Directions() {
               </div>
             </div>
 
-            <p>
-              <strong>Parking:</strong> Parking dla gości dostępny jest
-              bezpośrednio przy sali weselnej. Wjazd na parking znajduje się zaraz
-              po skręceniu w lewo na rozwidleniu. Dodatkowe miejsca parkingowe
-              są dostępne niżej, przy alei Waszyngtona.
-            </p>
+            {/* Shuttle highlight */}
+            <div className="flex gap-3 p-4 rounded-lg bg-amber-50 border border-amber-200 text-amber-900">
+              <Bus className="size-5 shrink-0 mt-0.5 text-amber-600" />
+              <div>
+                <p className="font-medium">
+                  Autobus dowiezie Was na ceremonię i z powrotem
+                </p>
+                <p className="mt-1">
+                  Przy kościele nie ma parkingu, dlatego samochody zostawiamy
+                  tutaj, przy sali weselnej. Stąd <strong>autobus zabierze
+                  gości do kościoła na ceremonię</strong>, a po niej{" "}
+                  <strong>przywiezie z powrotem</strong> na salę weselną.
+                </p>
+              </div>
+            </div>
           </div>
 
           <div
@@ -144,9 +77,9 @@ export function Directions() {
           >
             <Image
               src="/mapa-kopiec.png"
-              alt="Mapa dojazdu do sali weselnej"
-              width={1200}
-              height={600}
+              alt="Mapa dojazdu do sali weselnej i parkingu"
+              width={2048}
+              height={1371}
               className="w-full h-auto"
             />
           </div>
@@ -164,6 +97,50 @@ export function Directions() {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               title="Mapa sali weselnej"
+            />
+          </div>
+        </div>
+
+        {/* Divider */}
+        <div className="my-16 border-t border-wedding-200" />
+
+        {/* Church */}
+        <div className="space-y-6" ref={churchRef}>
+          <h3
+            className="font-serif text-2xl font-light text-wedding-800"
+            style={revealStyle(churchVisible, 0)}
+          >
+            Kościół — Ceremonia
+          </h3>
+
+          <div
+            className="text-sm text-wedding-700 leading-relaxed space-y-3"
+            style={revealStyle(churchVisible, 200)}
+          >
+            <p>
+              Kościół znajduje się na Zwierzyńcu, tuż przy moście Dębnickim, nad
+              samą Wisłą. Kościół posiada dwa wejścia, jedno od ulicy Tadeusza Kościuszki oraz drugie wejscie od dziedzińca, do którego wejscie znajduje się od strony rzeki Rudawy.
+            </p>
+            <p>
+              <strong>Parking:</strong> Przy kościele nie ma dedykowanego
+              parkingu — dlatego dojazd zapewnia autobus z parkingu przy sali
+              weselnej (szczegóły powyżej).
+            </p>
+          </div>
+
+          <div
+            className="rounded-xl overflow-hidden border border-wedding-200"
+            style={revealStyle(churchVisible, 300, { scale: true })}
+          >
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1280.5!2d19.9141919!3d50.0521627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47165b762a8a3e99%3A0xd6e453b9ea19d47f!2sParish%20of%20the%20Holy%20Saviour!5e0!3m2!1spl!2spl!4v1700000000000!5m2!1spl!2spl"
+              width="100%"
+              height="350"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Mapa kościoła"
             />
           </div>
         </div>

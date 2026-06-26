@@ -57,7 +57,7 @@ Two cards side by side:
 ### Reception
 - **Venue:** Sala weselna przy Kopcu Kościuszki
 - **Address:** al. Jerzego Waszyngtona 1, 30-204 Kraków
-- **Time:** 16:00
+- **Time:** ~ 16:00
 - **Google Maps link:** https://maps.app.goo.gl/58YDzKN9GNxoGxis7
 - Button: "Pokaż na mapie"
 

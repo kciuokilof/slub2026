@@ -4,24 +4,33 @@ import { useScrollReveal, revealStyle } from "@/hooks/use-scroll-reveal";
 
 const EVENTS = [
   {
-    time: "15:00",
+    time: "13:30",
+    title: "Autobus spod Kopca",
+    description: "Autobus zabiera gości spod sali weselnej do kościoła",
+  },
+  {
+    time: "14:00",
     title: "Ceremonia",
     description: "Ślub w Kościele św. Augustyna i św. Jana Chrzciciela na Zwierzyńcu",
   },
   {
-    time: "16:30",
+    time: "~16:00",
     title: "Przyjazd na salę",
     description: "Powitanie gości w sali weselnej przy Kopcu Kościuszki",
   },
   {
-    time: "17:00",
+    time: "~16:30",
     title: "Obiad",
     description: "Uroczysta biesiada weselna",
   },
   {
-    time: "18:00",
+    time: "~17:15",
     title: "Wyjście na Kopiec",
-    description: "Wyjście na Kopiec Kościuszki dla chętnych",
+    description: "Jeśli pogoda pozwoli, wyjście na szczyt Kopca Kościuszki dla chętnych",
+  },
+  {
+    title: "Zabawa",
+    description: "Ślub - nie jest końcem świata, Choć kawaler znika z lata. Za to mąż zyskuje wiele – Żonę, szczęście i wesele!",
   },
 ];
 

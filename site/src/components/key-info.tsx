@@ -1,6 +1,6 @@
 "use client";
 
-import { Church, PartyPopper } from "lucide-react";
+import { Church, PartyPopper, Bus } from "lucide-react";
 import { useScrollReveal, revealStyle } from "@/hooks/use-scroll-reveal";
 
 export function KeyInfo() {
@@ -59,7 +59,7 @@ export function KeyInfo() {
             <p className="text-sm text-muted-foreground">
               al. Jerzego Waszyngtona 1, 30-204 Kraków
             </p>
-            <p className="font-serif text-xl text-wedding-800">16:00</p>
+            <p className="font-serif text-xl text-wedding-800">~ 16:00</p>
             <a
               href="https://maps.app.goo.gl/5XtRXpFQew7G3wWR9?g_st=ac"
               target="_blank"
@@ -68,6 +68,25 @@ export function KeyInfo() {
             >
               Pokaż na mapie
             </a>
+          </div>
+        </div>
+
+        {/* Shuttle callout */}
+        <div
+          className="mt-10 flex gap-4 p-6 rounded-xl bg-amber-50 border border-amber-200 text-amber-900"
+          style={revealStyle(visible, 450, { scale: true })}
+        >
+          <Bus className="size-7 shrink-0 mt-0.5 text-amber-600 stroke-[1.2]" />
+          <div>
+            <h3 className="font-serif text-lg font-light text-amber-900">
+              Parkujemy przy sali, na ceremonię dowiezie autobus
+            </h3>
+            <p className="mt-2 text-sm leading-relaxed">
+              Przy kościele <strong>nie ma parkingu</strong>. Samochody
+              zostawiamy na parkingu przy sali weselnej (Kopiec Kościuszki).
+              Stamtąd <strong>autobus dowiezie gości na ceremonię w kościele
+              i z powrotem</strong> na salę weselną.
+            </p>
           </div>
         </div>
       </div>

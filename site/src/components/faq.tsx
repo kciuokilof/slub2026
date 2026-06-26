@@ -6,17 +6,17 @@ const FAQ_ITEMS = [
     {
     question: "Kiedy składamy życzenia?",
     answer:
-      "Życzenia składamy po ceremonii zaślubin na dziedzińcu Kościoła. Po złożeniu życzeń zachęcamy do sprawnego transportu na salę weselną.",
+      "Życzenia składamy po ceremonii zaślubin na dziedzińcu Kościoła. Po złożeniu życzeń busy zabiorą nas spowrotem na salę weselną.",
   },
   {
     question: "Chcę wyjść na kopiec, co muszę wiedzieć?",
     answer:
-      "Planujemy wspólne wyjście na szczyt Kopca Kościuszki dla chętnych. Wejście jest krótkie (5-10 minut od sali) po bruku, końcowy fragment jest dość stromy i prowadzi po utwardzonej, miejscami nierównej nawierzchni. Polecamy wygodne obuwie — dla Pań w szpilkach wejście może być mniej komfortowe, dlatego warto rozważyć niższy obcas, lub zabranie dodatkowej pary butów. Nie są potrzebne buty trekkingowe ani sportowe. Starsze osoby dadzą radę spokojnym tempem.",
+      "Jeśli pogoda pozwoli chcemy wspólnie wyjść na szczyt Kopca Kościuszki. Atrakcja dla chętnych. Wejście jest krótkie (5-10 minut od sali) po bruku, końcowy fragment jest dość stromy i prowadzi po utwardzonej, miejscami nierównej nawierzchni. Polecamy wygodne obuwie, warto rozważyć niższy obcas, lub zabranie dodatkowej pary butów. Nie są potrzebne buty trekkingowe ani sportowe. Starsze osoby dadzą radę spokojnym tempem.",
   },
   {
     question: "Czy jest parking?",
     answer:
-      "Tak! Zarówno przy kościele, jak i przy sali weselnej dostępne są miejsca parkingowe. Szczegóły znajdziecie w sekcji Jak dojechać.",
+      "Przy sali weselnej dostępne są bezpłatne miejsca parkingowe (zarówno przy drodze dojazdowej jak i na terenie kopca). Z miejsca zaznaczonego na mapce kopca odjeżdżają autobusy które zabiorą Was do kościoła i spowrotem na salę weselną. Niestety przy kościele nie ma dedykowanego parkingu, więc jęśli decydujecie się jechać do kościoła samodzielnie, to trzeba parkować na publicznych płatnych parkingach.",
   },
   {
     question: "Czy będzie nocleg?",

@@ -8,9 +8,9 @@ const CONTACTS = [
   { role: "Pan Młody", name: "Kamil Kozioł", phone: "+48 500 227 184" },
   { role: "Mama Panny Młodej", name: "Barbara Golemo", phone: "+48 604 428 057" },
   { role: "Mama Pana Młodego", name: "Justyna Kozioł", phone: "+48 500 303 603" },
-  { role: "Tata Panny Młodej", name: "Paweł Golemo", phone: "+48 545 678 901" },
+  { role: "Tata Panny Młodej", name: "Paweł Golemo", phone: "+48 602 535 564" },
   { role: "Tata Pana Młodego", name: "Krystian Kozioł", phone: "+48 501 615 787" },
-  { role: "Świadkowa", name: "Kamila Golemo", phone: "+48 512 345 678" },
+  { role: "Świadkowa", name: "Kamila Golemo", phone: "+48 784 351 894" },
   { role: "Świadek", name: "Ludwik Bukowski", phone: "+48 601 987 588" },
   { role: "Brat Pana Młodego", name: "Kacper Kozioł", phone: "+48 500 537 516" },
 ];
@@ -61,7 +61,7 @@ export function Contact() {
           style={revealStyle(visible, 700)}
         >
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Przed weselem będziemy więcej niż szczęśliwi, mogąc odpowiedzieć na wszystkie Wasze pytania — dzwońcie i piszcie śmiało! W dniu wesela prosimy jednak kierować pytania do bliskich wymienionych powyżej.
+            Przed weselem z chęcią odpowiemy na wszystkie Wasze pytania — dzwońcie i piszcie śmiało! W dniu i w wigilię wesela prosimy jednak kierować pytania do bliskich wymienionych powyżej.
           </p>
           <p className="text-sm text-wedding-700 leading-relaxed">
             Jeśli wśród Waszych bliskich są osoby, które nie korzystają z internetu — prosimy, przekażcie im najważniejsze informacje z tej strony osobiście lub telefonicznie. Będziemy wdzięczni!
