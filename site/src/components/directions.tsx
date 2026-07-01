@@ -59,11 +59,11 @@ export function Directions() {
               <Bus className="size-5 shrink-0 mt-0.5 text-amber-600" />
               <div>
                 <p className="font-medium">
-                  Autobus dowiezie Was na ceremonię i z powrotem
+                  Autokar dowiezie Was na ceremonię i z powrotem
                 </p>
                 <p className="mt-1">
                   Przy kościele nie ma parkingu, dlatego samochody zostawiamy
-                  tutaj, przy sali weselnej. Stąd <strong>autobus zabierze
+                  tutaj, przy sali weselnej. Stąd <strong>autokar zabierze
                   gości do kościoła na ceremonię</strong>, a po niej{" "}
                   <strong>przywiezie z powrotem</strong> na salę weselną.
                 </p>
@@ -123,7 +123,7 @@ export function Directions() {
             </p>
             <p>
               <strong>Parking:</strong> Przy kościele nie ma dedykowanego
-              parkingu — dlatego dojazd zapewnia autobus z parkingu przy sali
+              parkingu — dlatego dojazd zapewnia autokar z parkingu przy sali
               weselnej (szczegóły powyżej).
             </p>
           </div>

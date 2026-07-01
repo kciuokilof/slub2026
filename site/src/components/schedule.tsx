@@ -5,8 +5,8 @@ import { useScrollReveal, revealStyle } from "@/hooks/use-scroll-reveal";
 const EVENTS = [
   {
     time: "13:30",
-    title: "Autobus spod Kopca",
-    description: "Autobus zabiera gości spod sali weselnej do kościoła",
+    title: "Autokar spod Kopca",
+    description: "Autokar zabiera gości spod sali weselnej do kościoła",
   },
   {
     time: "14:00",
