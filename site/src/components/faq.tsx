@@ -6,17 +6,17 @@ const FAQ_ITEMS = [
     {
     question: "Kiedy składamy życzenia?",
     answer:
-      "Życzenia składamy po ceremonii zaślubin na dziedzińcu Kościoła. Po złożeniu życzeń busy zabiorą nas spowrotem na salę weselną.",
+      "Życzenia składamy po ceremonii zaślubin na dziedzińcu kościoła. Po złożeniu życzeń busy zabiorą Was z powrotem na salę weselną.",
   },
   {
     question: "Chcę wyjść na kopiec, co muszę wiedzieć?",
     answer:
-      "Jeśli pogoda pozwoli chcemy wspólnie wyjść na szczyt Kopca Kościuszki. Atrakcja dla chętnych. Wejście jest krótkie (5-10 minut od sali) po bruku, końcowy fragment jest dość stromy i prowadzi po utwardzonej, miejscami nierównej nawierzchni. Polecamy wygodne obuwie, warto rozważyć niższy obcas, lub zabranie dodatkowej pary butów. Nie są potrzebne buty trekkingowe ani sportowe. Starsze osoby dadzą radę spokojnym tempem.",
+      "Jeśli pogoda pozwoli, chcemy wspólnie wyjść na szczyt Kopca Kościuszki. Atrakcja dla chętnych. Wejście jest krótkie (5-10 minut od sali) po bruku, końcowy fragment jest dość stromy i prowadzi po utwardzonej, miejscami nierównej nawierzchni. Polecamy wygodne obuwie, warto rozważyć niższy obcas, lub zabranie dodatkowej pary butów. Nie są potrzebne buty trekkingowe ani sportowe. Starsze osoby dadzą radę spokojnym tempem.",
   },
   {
     question: "Czy jest parking?",
     answer:
-      "Przy sali weselnej dostępne są bezpłatne miejsca parkingowe (zarówno przy drodze dojazdowej jak i na terenie kopca). Z miejsca zaznaczonego na mapce kopca odjeżdżają autobusy które zabiorą Was do kościoła i spowrotem na salę weselną. Niestety przy kościele nie ma dedykowanego parkingu, więc jęśli decydujecie się jechać do kościoła samodzielnie, to trzeba parkować na publicznych płatnych parkingach.",
+      "Przy sali weselnej dostępne są bezpłatne miejsca parkingowe (zarówno przy drodze dojazdowej jak i na terenie kopca). Z miejsca zaznaczonego na mapce kopca odjeżdżają autobusy które zabiorą Was do kościoła i z powrotem na salę weselną. Niestety, przy kościele nie ma dedykowanego parkingu. Jeśli zdecydujecie się jechać do kościoła samodzielnie, trzeba zaparkować na publicznych płatnych miejscach parkingowych.",
   },
   {
     question: "Czy będzie nocleg?",

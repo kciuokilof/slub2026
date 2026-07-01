@@ -24,13 +24,12 @@ const EVENTS = [
     description: "Uroczysta biesiada weselna",
   },
   {
-    time: "~17:15",
     title: "Wyjście na Kopiec",
     description: "Jeśli pogoda pozwoli, wyjście na szczyt Kopca Kościuszki dla chętnych",
   },
   {
     title: "Zabawa",
-    description: "Ślub - nie jest końcem świata, Choć kawaler znika z lata. Za to mąż zyskuje wiele – Żonę, szczęście i wesele!",
+    description: "Ślub - nie jest końcem świata, choć kawaler znika z lata. Za to mąż zyskuje wiele – Żonę, szczęście i wesele!",
   },
 ];
 

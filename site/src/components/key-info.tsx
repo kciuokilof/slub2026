@@ -79,7 +79,7 @@ export function KeyInfo() {
           <Bus className="size-7 shrink-0 mt-0.5 text-amber-600 stroke-[1.2]" />
           <div>
             <h3 className="font-serif text-lg font-light text-amber-900">
-              Parkujemy przy sali, na ceremonię dowiezie autobus
+              <b> Uwaga! </b> Parkujemy przy sali, na ceremonię dowiezie Was autobus
             </h3>
             <p className="mt-2 text-sm leading-relaxed">
               Przy kościele <strong>nie ma parkingu</strong>. Samochody

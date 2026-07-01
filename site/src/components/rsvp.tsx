@@ -19,7 +19,7 @@ export function Rsvp() {
           style={revealStyle(visible, 150)}
         >
           Prosimy o potwierdzenie obecności do{" "}
-          <strong className="text-wedding-800">24 sierpnia 2026.</strong>{" "}
+          <strong className="text-wedding-800">30 sierpnia 2026.</strong>{" "}
         </p>
         <p
           className="mt-3 text-xs text-muted-foreground leading-relaxed"
