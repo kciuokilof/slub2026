@@ -29,7 +29,7 @@ export function Accommodation() {
             <p className="text-2xl">Wkrótce</p>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Pracujemy nad ustaleniem szczegółów dotyczących noclegów dla
-              naszych gości. Informacje o hotelach, adresach i cenach pojawią
+              naszych gości. Informacje o hotelach pojawią
               się tutaj wkrótce.
             </p>
             <p className="text-sm text-wedding-600">
