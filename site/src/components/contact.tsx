@@ -13,6 +13,7 @@ const CONTACTS = [
   { role: "Świadkowa", name: "Kamila Golemo", phone: "+48 784 351 894" },
   { role: "Świadek", name: "Ludwik Bukowski", phone: "+48 601 987 588" },
   { role: "Brat Pana Młodego", name: "Kacper Kozioł", phone: "+48 500 537 516" },
+  { role: "Menedżerka Hotelu", name: "Marta", phone: "+48 696 589 845" },
 ];
 
 export function Contact() {

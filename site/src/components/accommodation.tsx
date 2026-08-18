@@ -13,52 +13,111 @@ export function Accommodation() {
           className="font-serif text-3xl md:text-4xl font-light text-center text-wedding-900 tracking-wide"
           style={revealStyle(visible, 0)}
         >
-          Noclegi & Transport
+          Nocleg
         </h2>
 
-        <div className="mt-14 grid md:grid-cols-2 gap-8">
-          {/* Accommodation */}
+        <div className="mt-14 max-w-2xl mx-auto">
+          {/* Accommodation + hotel autokar */}
           <div
             className="text-center space-y-4 p-8 rounded-xl bg-white border border-wedding-200"
             style={revealStyle(visible, 150, { scale: true })}
           >
             <Hotel className="mx-auto size-8 text-silver-500 stroke-[1.2]" />
-            <h3 className="font-serif text-xl font-light text-wedding-800">
-              Noclegi
-            </h3>
-            <p className="text-2xl">Wkrótce</p>
+            <p className="text-2xl">Hotel Zakliki</p>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Pracujemy nad ustaleniem szczegółów dotyczących noclegów dla
-              naszych gości. Informacje o hotelach pojawią
-              się tutaj wkrótce.
+              Zygmunta Starego 130, 30-198 Kraków
+              <br />
+              <a
+                href="https://maps.app.goo.gl/3miZZEETouV8Tjjt9"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-wedding-700 underline hover:text-wedding-900"
+              >
+                Zobacz na mapie Google
+              </a>
+            </p>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              Hotel znajduje się ok. <strong>20–25 minut jazdy</strong> od miejsca
+              wesela. Nie organizujemy transportu do hotelu. Na miejscu dostępny
+              jest <strong>parking</strong>.
+            </p>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              W niedzielę na dole czekać będzie na Was <strong>śniadanie</strong>, a
+              wykwaterowanie obowiązuje najpóźniej do <strong>godziny 12:00</strong>.
+            </p>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              Z parkingu hotelu na ceremonię odjedzie <strong>autokar o godzinie 13:00</strong>.
+              Po drodze zatrzyma się przy sali weselnej, aby zabrać pozostałych gości.
             </p>
             <p className="text-sm text-wedding-600">
-              W formularzu RSVP możecie zaznaczyć, czy potrzebujecie noclegu
-              (od piątku lub od soboty).
+              Prosimy o informację, o której godzinie planujecie przyjazd — to
+              ważne, abyśmy mogli potwierdzić godzinę przyjazdu z hotelem.
+            </p>
+            <p className="text-sm text-wedding-600">
+              Aby zapisać się na nocleg, skontaktujcie się z nami lub zaznaczcie
+              to w formularzu RSVP.
+            </p>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              W razie pytań możecie skontaktować się z menedżerką hotelu{" "}
+              <p className="whitespace-nowrap">
+                Pani Marta{" "}
+                <a
+                  href="tel:+48696589845"
+                  className="text-wedding-700 underline hover:text-wedding-900"
+                >
+                  +48 696 589 845
+                </a>
+              </p>
+            </p>
+          </div>
+        </div>
+
+        {/* Transport for out-of-town guests */}
+        <h3
+          className="mt-16 font-serif text-2xl md:text-3xl font-light text-center text-wedding-900 tracking-wide"
+          style={revealStyle(visible, 450)}
+        >
+          Transport z Tarnowa i okolic
+        </h3>
+
+        <div className="mt-10 grid md:grid-cols-2 gap-8">
+          {/* Transport - bus to ceremony & venue */}
+          <div
+            className="text-center space-y-4 p-8 rounded-xl bg-white border border-wedding-200"
+            style={revealStyle(visible, 600, { scale: true })}
+          >
+            <Bus className="mx-auto size-8 text-silver-500 stroke-[1.2]" />
+            <h4 className="font-serif text-xl font-light text-wedding-800">
+              Dojazd na ślub
+            </h4>
+            <p className="text-2xl">Dąbrowa → Tarnów → Kraków</p>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              Dla gości z Tarnowa i okolic organizujemy autobus na trasie{" "}
+              <strong>Dąbrowa Tarnowska → Tarnów → Kraków</strong> — najpierw na
+              ceremonię, a następnie na salę weselną.
+            </p>
+            <p className="text-sm text-wedding-600">
+              Szczegóły dotyczące godzin i miejsc zbiórki podamy wkrótce.
+              Zaznaczcie w formularzu RSVP, czy potrzebujecie transportu.
             </p>
           </div>
 
-          {/* Transport */}
+          {/* Transport - return buses */}
           <div
             className="text-center space-y-4 p-8 rounded-xl bg-white border border-wedding-200"
-            style={revealStyle(visible, 300, { scale: true })}
+            style={revealStyle(visible, 750, { scale: true })}
           >
             <Bus className="mx-auto size-8 text-silver-500 stroke-[1.2]" />
-            <h3 className="font-serif text-xl font-light text-wedding-800">
-              Transport
-            </h3>
-            <p className="text-2xl">Wkrótce</p>
+            <h4 className="font-serif text-xl font-light text-wedding-800">
+              Powrót po weselu
+            </h4>
+            <p className="text-2xl">Kraków → Tarnów → Dąbrowa</p>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Planujemy zorganizować transport autobusowy na trasie:{" "}
-            </p>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              <strong>Dąbrowa Tarnowska → Tarnów → Kraków</strong> (przed ślubem) oraz{" "}
-              <strong>busy powrotne</strong> po weselu.
+              Po weselu zapewniamy <strong>autobusy powrotne</strong> na trasie{" "}
+              <strong>Kraków → Tarnów → Dąbrowa Tarnowska</strong>.
             </p>
             <p className="text-sm text-wedding-600">
-              Szczegóły dotyczące godzin odjazdu, miejsca zbiórki i parkingu
-              zostaną podane wkrótce. Zaznacz w formularzu RSVP, czy
-              potrzebujesz transportu.
+              Godziny odjazdów powrotnych podamy wkrótce.
             </p>
           </div>
         </div>

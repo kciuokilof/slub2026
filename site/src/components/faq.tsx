@@ -19,13 +19,18 @@ const FAQ_ITEMS = [
       "Przy sali weselnej dostępne są bezpłatne miejsca parkingowe (zarówno przy drodze dojazdowej jak i na terenie kopca). Z miejsca zaznaczonego na mapce kopca odjeżdżają autobusy które zabiorą Was do kościoła i z powrotem na salę weselną. Niestety, przy kościele nie ma dedykowanego parkingu. Jeśli zdecydujecie się jechać do kościoła samodzielnie, trzeba zaparkować na publicznych płatnych miejscach parkingowych.",
   },
   {
-    question: "Czy będzie nocleg?",
-    answer:
-      "Pracujemy nad zapewnieniem noclegów dla gości. Szczegóły pojawią się wkrótce. W formularzu RSVP możecie zaznaczyć, czy potrzebujecie noclegu.",
-  },
-  {
     question: "Do której trwa wesele?",
     answer: "Będziemy bawić się do białego rana! Planujemy zakończenie zabawy w okolicach godziny 4:00–5:00.",
+  },
+  {
+    question: "Pojawię się w hotelu tuż przed odjazdem autokaru, co robić?",
+    answer:
+      "Spokojnie, można zostawić rzeczy do przechowania na recepcji, i wsiąść odrazu do autkoaru, właściwe zameldowanie można zrobić po przybyciu.",
+  },
+  {
+    question: "Pojawię się w hotelu zanim pokój będzie gotowy, co robić?",
+    answer:
+      "Niestety w takim wypadku zostaje tylko łazienka w lobby, dlatego dobrze potwierdzić godzinę przybycia z nami wcześniej.",
   }
 ];
 
