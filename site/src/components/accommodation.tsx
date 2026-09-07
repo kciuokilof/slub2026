@@ -46,8 +46,13 @@ export function Accommodation() {
               wykwaterowanie obowiązuje najpóźniej do <strong>godziny 12:00</strong>.
             </p>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Z parkingu hotelu na ceremonię odjedzie <strong>autokar o godzinie 13:00</strong>.
+              Z parkingu hotelu na ceremonię odjedzie <strong>transport o godzinie 13:00</strong>.
               Po drodze zatrzyma się przy sali weselnej, aby zabrać pozostałych gości.
+            </p>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              Z sali weselnej z powrotem do hotelu zabiorą Was taksówki.
+              Ewentualnie będzie też transport kursujący w kierunku Tarnowa,
+              który na życzenie podrzuci Was do hotelu (na wszelki wypadek prosimy przypomnieć się kierowcy).
             </p>
             <p className="text-sm text-wedding-600">
               Prosimy o informację, o której godzinie planujecie przyjazd — to
@@ -92,13 +97,38 @@ export function Accommodation() {
             </h4>
             <p className="text-2xl">Dąbrowa → Tarnów → Kraków</p>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Dla gości z Tarnowa i okolic organizujemy autobus na trasie{" "}
-              <strong>Dąbrowa Tarnowska → Tarnów → Kraków</strong> — najpierw na
-              ceremonię, a następnie na salę weselną.
+              Dla gości z Tarnowa i okolic organizujemy transport na trasie{" "}
+              <strong>Dąbrowa Tarnowska → Tarnów → Kraków</strong> — ostatni przystanek pod samym kościołem.
+              Po ceremoni będzie transport tym samym pojazdem do sali weselnej.
             </p>
+            <ul className="text-sm text-wedding-700 text-left space-y-2 mx-auto max-w-xs">
+              <li className="flex gap-3">
+                <span className="font-semibold tabular-nums w-12 shrink-0">
+                  11:00
+                </span>
+                <span>
+                  <strong>Dąbrowa Tarnowska</strong> — Orlen, ulica Piłsudskiego
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="font-semibold tabular-nums w-12 shrink-0">
+                  11:45
+                </span>
+                <span>
+                  <strong>Tarnów</strong> — ulica Wodna przy salonie meblowym Ewa
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="font-semibold tabular-nums w-12 shrink-0">
+                  13:45
+                </span>
+                <span>
+                  <strong>Kościół</strong> — na ceremonię o 14:00
+                </span>
+              </li>
+            </ul>
             <p className="text-sm text-wedding-600">
-              Szczegóły dotyczące godzin i miejsc zbiórki podamy wkrótce.
-              Zaznaczcie w formularzu RSVP, czy potrzebujecie transportu.
+               W razie pytań do tego transportu, prosimy o kontakt z rodzicami Pani Młodej. Zaznaczcie w formularzu RSVP, czy potrzebujecie tego transportu.
             </p>
           </div>
 
@@ -113,11 +143,21 @@ export function Accommodation() {
             </h4>
             <p className="text-2xl">Kraków → Tarnów → Dąbrowa</p>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Po weselu zapewniamy <strong>autobusy powrotne</strong> na trasie{" "}
-              <strong>Kraków → Tarnów → Dąbrowa Tarnowska</strong>.
+              Dla gości wracających w trakcie zabawy zapewniamy{" "}
+              <strong>transport powrotny</strong> na trasie{" "}
+              <strong>Kraków → Tarnów → Dąbrowa Tarnowska</strong> — tą samą
+              trasą w drugą stronę.
             </p>
+            <ul className="text-sm text-wedding-700 text-left space-y-2 mx-auto max-w-xs">
+              <li className="flex gap-3">
+                <span className="font-semibold tabular-nums w-16 shrink-0">
+                  ~4:00
+                </span>
+                <span>Planujemy jeden kurs powrotny na koniec wesela</span>
+              </li>
+            </ul>
             <p className="text-sm text-wedding-600">
-              Godziny odjazdów powrotnych podamy wkrótce.
+              Jeśli wszyscy chętni będą gotowi do powrotu wcześniej, autokar może ruszyć na życzenie o wcześniejszej porze. W takiej sytuacji wystarczy zebrać się w umówionym miejscu i zgłosić się do Rodziców Panny Młodej, którzy przekażą szczegóły dotyczące wcześniejszego wyjazdu.
             </p>
           </div>
         </div>

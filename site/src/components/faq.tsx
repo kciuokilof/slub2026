@@ -6,7 +6,7 @@ const FAQ_ITEMS = [
     {
     question: "Kiedy składamy życzenia?",
     answer:
-      "Życzenia składamy po ceremonii zaślubin na dziedzińcu kościoła. Po złożeniu życzeń busy zabiorą Was z powrotem na salę weselną.",
+      "Życzenia składamy po ceremonii zaślubin na dziedzińcu kościoła. Po złożeniu życzeń busy i autokary zabiorą Was z powrotem na salę weselną.",
   },
   {
     question: "Chcę wyjść na kopiec, co muszę wiedzieć?",

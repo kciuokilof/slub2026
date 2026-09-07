@@ -35,7 +35,9 @@ export function Directions() {
               samochody — zarówno na czas ceremonii, jak i wesela. Dojazd i
               miejsce parkingowe pokazuje poniższa mapa.
             </p>
-
+            <p className="text-sm text-wedding-600">
+              W razie pytań prosimy o kontakt z rodzicami Pana Młodego.
+            </p>
             {/* Warning */}
             <div className="flex gap-3 p-4 rounded-lg bg-amber-50 border border-amber-200 text-amber-900">
               <TriangleAlert className="size-5 shrink-0 mt-0.5 text-amber-600" />
