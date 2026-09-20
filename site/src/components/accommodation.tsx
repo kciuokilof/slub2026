@@ -37,9 +37,10 @@ export function Accommodation() {
               </a>
             </p>
             <p className="text-sm text-muted-foreground leading-relaxed">
+              Dla gości przyjezdnych pokrywamy koszty noclegu.
               Hotel znajduje się ok. <strong>20–25 minut jazdy</strong> od miejsca
-              wesela. Nie organizujemy transportu do hotelu. Na miejscu dostępny
-              jest <strong>parking</strong>.
+              wesela. Do hotelu musicie dotrzeć we własnym zakresie, ponieważ nie organizujemy tego transportu.
+              Na miejscu dostępny jest <strong>parking</strong>.
             </p>
             <p className="text-sm text-muted-foreground leading-relaxed">
               W niedzielę na dole czekać będzie na Was <strong>śniadanie</strong>, a
